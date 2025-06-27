@@ -1,3 +1,10 @@
+:root {
+    --blockblog-primary-r: 254;
+    --blockblog-primary-g: 235;
+    --blockblog-primary-b: 94;
+    --blockblog-primary-alpha: 100%;
+    --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+}
 /* poppins-regular - latin */
 @font-face {
   font-display: swap;
@@ -12,43 +19,223 @@
     padding: 0;
     box-sizing: border-box;
 }
-.blockblog-header {
-    font-family: "Poppins";
-    display: flex;
-    justify-content: space-between;
-    padding:6px 0;
-    max-inline-size: 1080px;
-    margin: 0 auto;
-    .nav-menu ul{
+body {
+    --blockblog-primary-alpha: 30%;
+    --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+
+    background-color: var(--blockblog-primary);
+}
+header {
+        --blockblog-primary-alpha: 50%;
+        --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+        background-color: var(--blockblog-primary);
+    .blockblog-header {
+        font-family: "Poppins";
         display: flex;
-        list-style: none;
-        column-gap: 8px;
-        a {
-            text-decoration: none;
-            font-size: 16px;
-            color: #000;
+        justify-content: space-between;
+        align-items: center;
+        padding:10px;
+        max-inline-size: 1080px;
+        margin: 0 auto;
+    
+        .logo-and-nav {
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+            .logo {
+                font-size: 20px;
+            }
+            .nav-menu ul{
+                display: flex;
+                list-style: none;
+                column-gap: 8px;
+                a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: rgba(0,0,0,0.6);
+                    &:hover {
+                        color: rgba(0,0,0,1);
+                    }
+                }
+            }
+        }
+        
+        .search-and-profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 8px;
+            .avatar {
+                display: flex;
+            }
+            form div {
+                display: flex;
+                gap: 0;
+                height: 35px;
+                width: fit-content;
+                --border-radius: 8px;
+                input {
+                    padding: 0 10px;
+                    border-top-left-radius: var(--border-radius);
+                    border-bottom-left-radius: var(--border-radius);
+                    border-width: 1px;
+                    background: #fff;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                button {
+                    width: 35px;
+                    border-width: 1px;
+                    border-top-right-radius: var(--border-radius);
+                    border-bottom-right-radius: var(--border-radius);
+                    background: #fff;
+                    cursor: pointer;
+                }
+            }
+            img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                border-radius: 50%;
+                cursor: pointer;
+            }
         }
     }
-    .search-and-profile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 6px;
-        input {
-            padding: 6px;
-            &[type=text] {
-                
+
+}
+@media only screen and (max-width: 768px) {
+    header {
+       .blockblog-header {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+            .logo-and-nav {
+                width: 100%;
             }
-            &[type=submit] {
-                
-            }
-        }
-        img {
-            width: 30px;
-            height: 30px;
-            object-fit: cover;
-            border-radius: 50%;
         }
     }
 }
+@media only screen and (max-width: 500px) {
+    header {
+        .blockblog-header {
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            .logo-and-nav {
+                .logo {
+                    font-size: 16px;
+                }
+                .nav-menu {
+                    ul {
+                        flex-direction: column;
+                        position: absolute;
+                        top: 50px;
+                        --blockblog-primary-alpha: 50%;
+                        --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+                        background-color: var(--blockblog-primary);
+                        width: 100%;
+                        left: 0;
+                        padding: 0 10px;
+                        display: none;
+                        li {
+                            a {
+                                padding: 8px 0;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        &.nav-shown {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+            .blockblog-search {
+                input, button {
+                    height: 35px;
+                }
+                input {
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+.blockblog-container {
+    max-inline-size: 1080px;
+    margin: 0 auto;
+    margin-block: 20px;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 14px;
+    &.archive {
+        grid-template-columns: repeat(auto-fill, 250px);
+        .blockblog-single {
+    		box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            position: relative;
+            padding: 10px;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+            .post-meta {
+                font-size: 14px;
+                color: rgba(0,0,0,0.6);
+                margin-bottom: 10px;
+            }
+            .post-author-link,
+            .post-category-link {
+                color: rgba(0,0,0,1);
+            }
+            .post-title,
+            .post-excerpt {
+                color: rgba(0,0,0,0.8);
+                text-decoration: none;
+            }
+            &:hover,
+            &:focus-within {
+                background: rgba(0,0,0,0.05);
+                .post-title,
+                .post-excerpt,
+                .post-thumbnail,
+                .post-meta {
+                    filter: blur(1px);
+                }
+                .read-more {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+            .read-more {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -60%);
+                font-size: 14px;
+                color: rgba(0,0,0,1);
+                --blockblog-primary-alpha: 100%;
+                --blockblog-primary-g: 255;
+                --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+                background-color: var(--blockblog-primary);
+                padding: 8px 12px;
+                text-decoration: none;
+                opacity: 0;
+                pointer-events: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
 
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .blockblog-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding-inline: 20px;
+    }
+}
