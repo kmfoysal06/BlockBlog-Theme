@@ -16,10 +16,10 @@ get_header();
                 <?php if(has_post_thumbnail()): ?>
                     <img src="<?php echo get_the_post_thumbnail(); ?>" width="200px" height="200px" alt="<?php the_title(); ?>" class="post-thumbnail" />
                 <?php endif; ?>
+                    <h1 class="post-title"><?php the_title(); ?></h1>
                     <div class="post-content">
                         <?php the_content(); ?>
                     </div>
-                    <h1 class="post-title"><?php the_title(); ?></h1>
                         <div class="post-meta">
                             <span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
                             <span class="post-author">by 

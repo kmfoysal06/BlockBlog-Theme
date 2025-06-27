@@ -32,10 +32,10 @@
                                 <a href="/">Blogs</a>
                             </li>
                             <li>
-                                <a href="/">About</a>
+                                <a href="portfolio.kmfoysal06.com">About</a>
                             </li>
                             <li>
-                                <a href="/">Contact</a>
+                                <a href="http://linkedin.com/in/kmfoysal06">Contact</a>
                             </li>
                         <ul>
                     </div>
