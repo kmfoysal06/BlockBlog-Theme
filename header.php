@@ -29,13 +29,13 @@
                                 <a href="/">Home</a>
                             </li>
                             <li>
-                                <a href="/">Blogs</a>
+                                <a href="https://profiles.wordpress.org/kmfoysal06">WordPress</a>
                             </li>
                             <li>
-                                <a href="portfolio.kmfoysal06.com">About</a>
+                                <a href="https://portfolio.kmfoysal06.com">About</a>
                             </li>
                             <li>
-                                <a href="http://linkedin.com/in/kmfoysal06">Contact</a>
+                                <a href="https://linkedin.com/in/kmfoysal06">Contact</a>
                             </li>
                         <ul>
                     </div>
