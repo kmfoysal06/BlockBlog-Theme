@@ -45,8 +45,8 @@
                         <?php get_search_form() ?> 
                     </div>
                     <div class="avatar blockblog-profile">
-                        <!-- <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" /> -->
-                        <img src="<?php echo BLOCKBLOG_URI . '/assets/images/avatar.jpg' ?>" width="20px" height="20px" />
+                         <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" /> 
+       <!--                 <img src="<?php echo BLOCKBLOG_URI . '/assets/images/avatar.jpg' ?>" width="20px" height="20px" /> -->
                     </div>
                 </div>
             </div>
