@@ -1,0 +1,54 @@
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v23-latin-regular.woff2') format('woff2'),
+       url('../fonts/poppins-v23-latin-regular.ttf') format('truetype'); 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.blockblog-header {
+    font-family: "Poppins";
+    display: flex;
+    justify-content: space-between;
+    padding:6px 0;
+    max-inline-size: 1080px;
+    margin: 0 auto;
+    .nav-menu ul{
+        display: flex;
+        list-style: none;
+        column-gap: 8px;
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #000;
+        }
+    }
+    .search-and-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 6px;
+        input {
+            padding: 6px;
+            &[type=text] {
+                
+            }
+            &[type=submit] {
+                
+            }
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
