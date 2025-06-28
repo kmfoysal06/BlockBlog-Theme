@@ -21,23 +21,10 @@
             <div class="blockblog-header">
                 <div class="logo-and-nav">
                     <div class="logo">
-                        <a href="/">kmfoysal06</a>
+                        <a href="/" data-blockblog-load="/">kmfoysal06</a>
                     </div>
-                    <div class="nav-menu">
-                        <ul class="blockblog-nav">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="https://profiles.wordpress.org/kmfoysal06">WordPress</a>
-                            </li>
-                            <li>
-                                <a href="https://portfolio.kmfoysal06.com">About</a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/in/kmfoysal06">Contact</a>
-                            </li>
-                        <ul>
+                    <div class="nav-menu blockblog-nav">
+                        <?php wp_nav_menu("blockblog_header_nav"); ?>
                     </div>
                 </div>
                 <div class="search-and-profile">
@@ -45,8 +32,10 @@
                         <?php get_search_form() ?> 
                     </div>
                     <div class="avatar blockblog-profile">
+                        <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>">
                          <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" /> 
-       <!--                 <img src="<?php echo BLOCKBLOG_URI . '/assets/images/avatar.jpg' ?>" width="20px" height="20px" /> -->
+                        </a>
+                         <span class="blockblog-menu-toggler dashicons dashicons-menu-alt"></span>
                     </div>
                 </div>
             </div>

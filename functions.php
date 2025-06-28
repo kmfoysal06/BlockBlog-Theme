@@ -25,3 +25,11 @@ function blockblog_limit_excerpt() {
     return 20;
 }
 add_filter("excerpt_length", "blockblog_limit_excerpt");
+
+// register nav menu
+function blockblog_register_menus() {
+    register_nav_menus([
+        'blockblog_header_nav' => __('BlockBlog Header Menu', 'blockblog'),
+    ]);
+}
+add_action('after_setup_theme', 'blockblog_register_menus');

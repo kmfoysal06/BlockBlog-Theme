@@ -29,6 +29,26 @@ header {
         --blockblog-primary-alpha: 50%;
         --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
         background-color: var(--blockblog-primary);
+		.blockblog-top-progress::before{
+		    content: '';
+		    width: 50%;
+		    height: 5px;
+		    background: #f00;
+		    position: absolute;
+		    top:0;
+		    left:50px;
+		    /* animation: blockblog-progress 1000ms ease infinite; */
+		    
+		}
+		@keyframes blockblog-progress {
+		    0% {
+		        left:0;
+		    }
+		    100% {
+		        left: 100%;
+		    }
+		}
+
     .blockblog-header {
         display: flex;
         justify-content: space-between;
@@ -71,6 +91,10 @@ header {
             column-gap: 8px;
             .avatar {
                 display: flex;
+                align-items: center;
+                .blockblog-menu-toggler {
+                    display: none;
+                }
             }
             form div {
                 display: flex;
@@ -96,13 +120,17 @@ header {
                     cursor: pointer;
                 }
             }
-            img {
-                width: 30px;
-                height: 30px;
-                object-fit: cover;
-                border-radius: 50%;
-                cursor: pointer;
+            .blockblog-profile-link {
+                display: flex;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
             }
+
         }
     }
 
@@ -130,7 +158,10 @@ header {
                 .logo {
                     font-size: 16px;
                 }
-                .nav-menu {
+                .blockblog-nav {
+                    &.nav-shown ul {
+                        display: flex;
+                    }
                     ul {
                         flex-direction: column;
                         position: absolute;
@@ -150,20 +181,29 @@ header {
                                 height: 100%;
                             }
                         }
-                        &.nav-shown {
-                            display: flex;
-                        }
+
                     }
                 }
             }
-            .blockblog-search {
-                input, button {
-                    height: 35px;
+            .search-and-profile {
+                .blockblog-search {
+                    input, button {
+                        height: 35px;
+                    }
+                    input {
+                        width: 150px;
+                    }
                 }
-                input {
-                    width: 150px;
+                .avatar {
+                    img {
+                        display: none;
+                    }
+                    .blockblog-menu-toggler {
+                        display: block;
+                    }
                 }
             }
+
         }
     }
 }
