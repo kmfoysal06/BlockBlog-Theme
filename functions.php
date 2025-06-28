@@ -16,6 +16,7 @@ function blockblog_load_assets() {
     wp_register_script("blockblog_main_js", BLOCKBLOG_URI . $main_js_path, [], filemtime(BLOCKBLOG_DIR . $main_js_path));
 
     wp_enqueue_style("blockblog_main");
+    wp_enqueue_style("dashicons");
     wp_enqueue_script("blockblog_main_js");
 }
 add_action("wp_enqueue_scripts", "blockblog_load_assets");

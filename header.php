@@ -21,7 +21,7 @@
             <div class="blockblog-header">
                 <div class="logo-and-nav">
                     <div class="logo">
-                        <h4>kmfoysal06</h4>
+                        <a href="/">kmfoysal06</a>
                     </div>
                     <div class="nav-menu">
                         <ul class="blockblog-nav">

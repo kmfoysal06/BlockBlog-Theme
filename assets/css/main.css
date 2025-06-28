@@ -20,9 +20,8 @@
     box-sizing: border-box;
 }
 body {
-    --blockblog-primary-alpha: 30%;
+    --blockblog-primary-alpha: 10%;
     --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
-
     background-color: var(--blockblog-primary);
 }
 header {
@@ -202,6 +201,10 @@ header {
                 .post-thumbnail,
                 .post-meta {
                     filter: blur(1px);
+                    &:hover, 
+                    &:focus-within {
+                        filter: blur(0);
+                    }
                 }
                 .read-more {
                     opacity: 1;
@@ -235,7 +238,9 @@ header {
 
 @media only screen and (max-width: 500px) {
     .blockblog-container {
-        grid-template-columns: repeat(1, 1fr);
+        &.archive {
+            grid-template-columns: repeat(1, 1fr);
+        }
         padding-inline: 20px;
     }
 }
