@@ -23,13 +23,13 @@ body {
     --blockblog-primary-alpha: 10%;
     --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
     background-color: var(--blockblog-primary);
+    font-family: "Poppins";
 }
 header {
         --blockblog-primary-alpha: 50%;
         --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
         background-color: var(--blockblog-primary);
     .blockblog-header {
-        font-family: "Poppins";
         display: flex;
         justify-content: space-between;
         align-items: center;
