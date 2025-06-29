@@ -5,23 +5,27 @@
 */
 ?>
 <!doctype html>
-<html>
+<html <?php language_attributes(); ?>>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title><?php bloginfo('name'); ?><?php wp_title('|', true, 'left'); ?></title>
         <?php wp_head(); ?>
     </head>
-    <body class="<?php echo body_class(); ?>">
-        <?php echo wp_body_open(); ?>
+    <body class="<?php body_class(); ?>">
+        <?php wp_body_open(); ?>
             <a class="skip-link screen-reader-text" href="#blockblog-content">
                 <?php _e('Skip to content', 'blockblog'); ?>
             </a>
  
         <header role="banner">
+            <div class="blockblog-top-progress"></div>
             <div class="blockblog-header">
                 <div class="logo-and-nav">
                     <div class="logo">
-                        <a href="/" data-blockblog-load="/">kmfoysal06</a>
+                        <a href="<?php echo esc_url(home_url("/")); ?>" data-blockblog-load="<?php echo esc_url(home_url("/")); ?>" role="home">
+                            <?php bloginfo('name'); ?>
+                        </a>
                     </div>
                     <div class="nav-menu blockblog-nav">
                         <?php wp_nav_menu("blockblog_header_nav"); ?>
@@ -39,4 +43,5 @@
                     </div>
                 </div>
             </div>
+            <div class="blockblog-page-loading-progress"></div>
         </header>
