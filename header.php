@@ -26,7 +26,7 @@ use Blockblog\Classes\Nav_Walker;
             <div class="blockblog-header">
                 <div class="logo-and-nav">
                     <div class="logo">
-                        <a href="<?php echo esc_url(home_url("/")); ?>" data-blockblog-load="<?php echo esc_url(home_url("/")); ?>" role="home">
+                        <a href="<?php echo esc_url(home_url("/")); ?>" data-blockblog-load="<?php echo esc_url(home_url("/")); ?>" aria-label="<?php esc_attr_e('Home', 'blockblog'); ?>" class="blockblog-logo-link">
                             <?php bloginfo('name'); ?>
                         </a>
                     </div>
@@ -45,8 +45,9 @@ use Blockblog\Classes\Nav_Walker;
                         <?php get_search_form() ?> 
                     </div>
                     <div class="avatar blockblog-profile">
-                        <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>">
-                         <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" /> 
+                        <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" aria-label="<?php esc_attr_e('Profile', 'blockblog'); ?>">
+
+                         <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" loading="lazy" /> 
                         </a>
                          <span class="blockblog-menu-toggler dashicons dashicons-menu-alt"></span>
                     </div>
