@@ -31,5 +31,15 @@ function blockblog_register_menus() {
     register_nav_menus([
         'blockblog_header_nav' => __('BlockBlog Header Menu', 'blockblog'),
     ]);
+    add_theme_support('menus');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('custom-logo', [
+        'height' => 60,
+        'width' => 200,
+        'flex-height' => true,
+        'flex-width' => true,
+    ]);
+    add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
 }
 add_action('after_setup_theme', 'blockblog_register_menus');
