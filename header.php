@@ -3,6 +3,9 @@
 * @package BlockBlog
 * Main Common Header
 */
+
+
+use Blockblog\Classes\Nav_Walker;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -28,7 +31,13 @@
                         </a>
                     </div>
                     <div class="nav-menu blockblog-nav">
-                        <?php wp_nav_menu("blockblog_header_nav"); ?>
+                        <?php if(has_nav_menu("blockblog_header_nav")): ?>
+                        <?php wp_nav_menu([
+                            'theme_location' => 'blockblog_header_nav',
+	                        'walker' => new Nav_Walker()
+                            ]);
+                        ?>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="search-and-profile">
