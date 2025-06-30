@@ -49,7 +49,7 @@ $default_thumbnail = BLOCKBLOG_URI . '/assets/images/avatar.jpg';
                     <p><?php the_excerpt(); ?></p>
                 </a>
 <a href="<?php the_permalink(); ?>" class="read-more" data-blockblog-load="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('Read more about: '. get_the_title(), 'blockblog'); ?>">
-                    Read More
+                    Read The Blog
                 </a>
             </div>
         <?php endwhile; ?>
