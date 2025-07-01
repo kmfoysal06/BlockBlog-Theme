@@ -62,4 +62,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+    document.addEventListener("keydown", e => {
+        if((e.ctrlKey && e.key === 'k') || e.key === '/') {
+            /**
+             * only prevent default if the key is not '/'
+             */
+
+            if(e.key !== '/'){
+                e.preventDefault();
+            }
+            const searchInput = document.querySelector(".blockblog-search input");
+            if(searchInput) {
+                searchInput.focus();
+            }
+        }
+    });
 });

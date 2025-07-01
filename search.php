@@ -1,13 +1,14 @@
 <?php
 /**
 * @package BlockBlog
-* Default Index Template to Load For Almost Every Pages (search, home, archive, suer profile)
+* Search Template to Load For Search Results
 */
 
 /**
 * load common header
 */
 get_header(); 
+$default_thumbnail = BLOCKBLOG_URI . '/assets/images/avatar.jpg';
 
 get_template_part("template-parts/posts");
 

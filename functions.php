@@ -14,6 +14,7 @@ require_once BLOCKBLOG_DIR . '/inc/helpers/template-tags.php';
 
 add_action("init", "blockblog_init");
 function blockblog_init() {
+    //return \Blockblog\Classes\Main::get_instance();
     new \Blockblog\Classes\Main();
 }
 blockblog_init();

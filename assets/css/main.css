@@ -297,7 +297,7 @@ header {
     }
     &:not(.archive) {
         .post-thumbnail {
-            width: 100%;
+            width: min(390px, 100%);
             aspect-ratio: 16/9;
             object-fit: cover;
             object-position: center;
@@ -324,4 +324,11 @@ header {
     100% {
         left: calc(100% - 100px);
     }
+}
+
+footer.blockblog-footer {
+    background: rgba(0,0,0,0.25);
+    color: rgba(0,0,0,0.8);
+    padding: 10px;
+    text-align: center;
 }

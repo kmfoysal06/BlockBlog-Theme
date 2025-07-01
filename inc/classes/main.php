@@ -6,12 +6,14 @@
  */
 
 namespace Blockblog\Classes;
-
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
+
+//use Blockblog\Traits\Singleton;
 class Main
 {
+ //   use Singleton;
     public function __construct()
     {
         new Assets();

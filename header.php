@@ -12,7 +12,7 @@ use Blockblog\Classes\Nav_Walker;
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <title><?php bloginfo('name'); ?><?php wp_title('|', true, 'left'); ?></title>
+        <title><?php bloginfo('name'); ?><?php wp_title(' - ', true, 'left'); ?></title>
         <?php wp_head(); ?>
     </head>
     <body class="<?php body_class(); ?>">
@@ -47,7 +47,7 @@ use Blockblog\Classes\Nav_Walker;
                     <div class="avatar blockblog-profile">
                         <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" aria-label="<?php esc_attr_e('Profile', 'blockblog'); ?>">
 
-                         <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" loading="lazy" /> 
+                            <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" loading="lazy" alt="<?php esc_attr_e('Profile Avatar', 'blockblog'); ?>" class="blockblog-profile-avatar" />
                         </a>
                          <span class="blockblog-menu-toggler dashicons dashicons-menu-alt"></span>
                     </div>
