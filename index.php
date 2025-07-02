@@ -9,6 +9,8 @@
 */
 get_header(); 
 
+get_template_part("template-parts/posts", "header");
+
 get_template_part("template-parts/posts");
 
 /**

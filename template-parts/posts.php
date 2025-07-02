@@ -9,8 +9,9 @@ if(!defined('ABSPATH')) {
 $default_thumbnail = BLOCKBLOG_URI . '/assets/images/avatar.jpg';
 ?>
 
-<div class="blockblog-container archive" id="blockblog-content">
+
     <?php if(have_posts()): ?>
+    <div class="blockblog-container archive" id="blockblog-content">
         <?php while(have_posts()): the_post(); ?>
             <div class="blockblog-single">
             <?php 
@@ -27,7 +28,7 @@ $default_thumbnail = BLOCKBLOG_URI . '/assets/images/avatar.jpg';
                     <img src="<?php echo esc_url($post_thumbnail); ?>" width="200px" height="200px" alt="<?php the_title(); ?>" loading="lazy" />
                 </a>
         <a href="<?php the_permalink(); ?>" class="post-title" data-blockblog-load="<?php the_permalink(); ?>" aria-labelledby="post-title">
-                    <h3><?php the_title(); ?></h3>
+                    <h2><?php the_title(); ?></h2>
                 </a>
                 <div class="post-meta">
                     <span class="post-date"><?php echo esc_html($post_date); ?></span>
@@ -52,6 +53,12 @@ $default_thumbnail = BLOCKBLOG_URI . '/assets/images/avatar.jpg';
                 </a>
             </div>
         <?php endwhile; ?>
+        </div>
+    <div class="blockblog-pagination">
+        <?php
+        wp_reset_postdata();
+        ?>
+    </div>
+    <?php else: ?>
+        <?php get_template_part('template-parts/posts-not-found'); ?>
     <?php endif; ?>
-</div>
-

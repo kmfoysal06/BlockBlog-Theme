@@ -1,0 +1,12 @@
+/**
+ * all utility css classes
+ */
+.min-h-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+.flex-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
