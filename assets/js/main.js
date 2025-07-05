@@ -23,11 +23,37 @@ document.addEventListener("DOMContentLoaded", function() {
                 const bodyMatch = data.match(/<body[^>]*>([\s\S]*)<\/body>/);
                 const headMatch = data.match(/<head[^>]*>([\s\S]*?)<\/head>/);
                 if (headMatch) {
+                    // if there is script:src load it dynamically by creating a script element
+                    const scriptMatches = headMatch[1].match(/<script[^>]*src="([^"]*)"[^>]*><\/script>/g);
+                    if (scriptMatches) {
+                        scriptMatches.forEach(scriptTag => {
+                            const srcMatch = scriptTag.match(/src="([^"]*)"/);
+                            if (srcMatch) {
+                                const script = document.createElement('script');
+                                script.src = srcMatch[1];
+                                script.async = true;
+                                document.head.appendChild(script);
+                            }
+                        });
+                    }
                     const headContent = headMatch[1];
                     const headElement = document.head;
                     headElement.innerHTML = headContent;
                 }
                 if (bodyMatch) {
+                    // if there is script:src load it dynamically by creating a script element
+                    const scriptMatches = bodyMatch[1].match(/<script[^>]*src="([^"]*)"[^>]*><\/script>/g);
+                    if (scriptMatches) {
+                        scriptMatches.forEach(scriptTag => {
+                            const srcMatch = scriptTag.match(/src="([^"]*)"/);
+                            if (srcMatch) {
+                                const script = document.createElement('script');
+                                script.src = srcMatch[1];
+                                script.async = true;
+                                document.body.appendChild(script);
+                            }
+                        });
+                    }
                     container.innerHTML = bodyMatch[1];
                 } else {
                     container.innerHTML = '<div class="blockblog-error">Content not found</div>';
