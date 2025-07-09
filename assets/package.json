@@ -1,0 +1,42 @@
+{
+  "name": "charmfeed",
+  "version": "1.0.0",
+  "description": "CharmFeed WordPress Theme",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --mode production --progress",
+    "dev": "webpack --watch --mode development --progress",
+    "clean": "rm -rf build/*"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "resource",
+    "community"
+  ],
+  "author": "Kazi Mohammad Foysal",
+  "license": "GNU",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-nested": "^7.0.2",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}

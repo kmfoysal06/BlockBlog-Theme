@@ -1,3 +1,5 @@
+import '../scss/main.scss';
+
 document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", async e => {
         if(!e.target.closest(".blockblog-header") && !e.target.closest(".blockblog-menu-toggler")) {
