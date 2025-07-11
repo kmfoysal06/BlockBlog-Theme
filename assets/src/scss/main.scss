@@ -307,9 +307,6 @@ header {
         text-align: center;
     }
     &:not(.archive) {
-        h1 {
-            font-size: 1.5rem;
-        }
         .post-thumbnail {
             width: min(390px, 100%);
             aspect-ratio: 16/9;
@@ -317,11 +314,6 @@ header {
             object-position: center;
             border-radius: 8px;
             margin-bottom: 0.8rem;
-        }
-        .blockblog-single-post,
-        .blockblog-single-page {
-            max-width: 390px;
-            white-space: pre-line;
         }
     }
 
@@ -331,6 +323,16 @@ header {
     .blockblog-container {
         &.archive {
             grid-template-columns: repeat(1, 1fr);
+        }
+        &:not(.archive) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .blockblog-single-post,
+            .blockblog-single-page {
+                max-width: 390px;
+                white-space: pre-line;
+            }
         }
         padding-inline: 20px;
     }
