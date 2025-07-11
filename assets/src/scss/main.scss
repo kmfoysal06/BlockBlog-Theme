@@ -211,7 +211,7 @@ header {
                         height: 35px;
                     }
                     input {
-                        width: 150px;
+                        width: 130px;
                     }
                 }
                 .avatar {
@@ -307,6 +307,9 @@ header {
         text-align: center;
     }
     &:not(.archive) {
+        h1 {
+            font-size: 1.5rem;
+        }
         .post-thumbnail {
             width: min(390px, 100%);
             aspect-ratio: 16/9;
@@ -314,6 +317,11 @@ header {
             object-position: center;
             border-radius: 8px;
             margin-bottom: 0.8rem;
+        }
+        .blockblog-single-post,
+        .blockblog-single-page {
+            max-width: 390px;
+            white-space: pre-line;
         }
     }
 
