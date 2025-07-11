@@ -307,7 +307,7 @@ header {
     }
     &:not(.archive) {
         .post-thumbnail {
-            width: min(390px, 100%);
+            width: max(390px, 100%);
             aspect-ratio: 16/9;
             object-fit: cover;
             object-position: center;
