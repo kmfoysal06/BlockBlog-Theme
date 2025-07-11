@@ -12,7 +12,7 @@ get_header();
 <div class="blockblog-container" id="blockblog-content">
     <?php if(have_posts()): ?>
         <?php while(have_posts()):the_post(); ?>
-            <div class="<?php post_class('blockblog-single-page') ?>">
+            <div <?php post_class('blockblog-single-page') ?>>
                 <?php if(has_post_thumbnail()): ?>
                     <img src="<?php echo get_the_post_thumbnail_url(); ?>" width="200px" height="200px" alt="<?php the_title(); ?>" class="post-thumbnail" loading="lazy" />
                 <?php endif; ?>
