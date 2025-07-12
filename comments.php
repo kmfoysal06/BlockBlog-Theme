@@ -54,7 +54,7 @@ if (post_password_required()) {
     <?php endif; // Check for comment navigation ?>
 
     <?php if (!comments_open() && get_comments_number()) : ?>
-    <p class="no-comments"><?php esc_html_e('Comments are closed.', 'simplecharm'); ?></p>
+    <p class="no-comments"><?php esc_html_e('Comments are closed.', 'blockblog'); ?></p>
     <?php endif; 
             //comments reply enqueue
             if (comments_open()) {
