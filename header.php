@@ -14,7 +14,7 @@ use Blockblog\Classes\Nav_Walker;
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <?php wp_head(); ?>
     </head>
-    <body class="<?php body_class(); ?>">
+    <body <?php body_class(); ?>>
         <?php wp_body_open(); ?>
             <a class="skip-link screen-reader-text" href="#blockblog-content">
                 <?php _e('Skip to content', 'blockblog'); ?>
@@ -43,13 +43,15 @@ use Blockblog\Classes\Nav_Walker;
                     <div class="search">
                         <?php get_search_form() ?> 
                     </div>
-                    <div class="avatar blockblog-profile">
-                        <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" aria-label="<?php esc_attr_e('Profile', 'blockblog'); ?>">
-
-                            <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" loading="lazy" alt="<?php esc_attr_e('Profile Avatar', 'blockblog'); ?>" class="blockblog-profile-avatar" />
-                        </a>
-                         <span class="blockblog-menu-toggler dashicons dashicons-menu-alt"></span>
-                    </div>
+                    <?php if(is_user_logged_in()): ?>
+                        <div class="avatar blockblog-profile">
+                            <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" class="blockblog-profile-link" data-blockblog-load="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>" aria-label="<?php esc_attr_e('Profile', 'blockblog'); ?>">
+    
+                                <img src="<?php echo get_avatar_url(get_current_user_id()); ?>" width="20px" height="20px" loading="lazy" alt="<?php esc_attr_e('Profile Avatar', 'blockblog'); ?>" class="blockblog-profile-avatar" />
+                            </a>
+                             <span class="blockblog-menu-toggler dashicons dashicons-menu-alt"></span>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="blockblog-page-loading-progress"></div>

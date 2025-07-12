@@ -1,0 +1,124 @@
+.blockblog-comments-area {
+
+
+  margin-top: 20px;
+
+  .logged-in-as {
+    margin-block: 10px;
+
+    .required-field-message {
+      display: block;
+      font-weight: 600;
+    }
+  }
+
+  .submit {
+    padding: 8px 12px;
+    margin-top: 10px;
+    width: fit-content;
+    margin-left: auto;
+    display: block;
+    border: 0;
+    color: #fff;
+    border-radius: 4px;
+    --blockblog-primary-alpha: 100%;
+    --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+    background-color: var(--blockblog-primary);
+  }
+
+  .comment-reply-title {
+    font-size: 1rem;
+  }
+
+  .comment-list {
+    list-style-type: none;
+
+    .comment {
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+      padding: 10px 14px;
+      margin-block: 8px;
+
+      .children {
+        margin-left: 20px;
+        border-left: 2px solid rgba(0, 0, 0, 0.1);
+        padding-left: 10px;
+        list-style-type: none;
+      }
+
+      .comment-meta {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-block: 6px 10px;
+
+        .comment-awaiting-moderation {
+          margin-top: 6px;
+          color: #808080;
+          font-size: 12px;
+          display: block;
+          width: 100%;
+        }
+        .comment-author {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 14px;
+
+          img {
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            object-fit: cover;
+          }
+
+          a {
+            text-decoration: none;
+            color: #000;
+          }
+        }
+
+        .comment-metadata {
+          a {
+            text-decoration: none;
+            color: #000;
+          }
+          time {
+            font-size: 12px;
+          }
+
+          span {
+            a {
+              text-decoration: underline;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .reply {
+        a {
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          color: #000;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .comment-form label {
+    font-size: 14px;
+  }
+  textarea,
+  input{
+    border-radius: 10px;
+  }
+  .comment-form-cookies-consent {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-block: 8px;
+  }
+}

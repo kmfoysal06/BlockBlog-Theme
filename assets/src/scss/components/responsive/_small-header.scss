@@ -1,0 +1,60 @@
+@media only screen and (max-width: 500px) {
+    header {
+        .blockblog-header {
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            .logo-and-nav {
+                .logo {
+                    font-size: 16px;
+                }
+                .blockblog-nav {
+                    &.nav-shown ul {
+                        display: flex;
+                    }
+                    ul {
+                        flex-direction: column;
+                        position: absolute;
+                        top: 55px;
+                        --blockblog-primary-alpha: 80%;
+                        --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+                        background-color: var(--blockblog-primary);
+                        width: 100%;
+                        left: 0;
+                        padding: 0 10px;
+                        display: none;
+                        li {
+                            a {
+                                padding: 8px 0;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+            .search-and-profile {
+                .blockblog-search {
+                    input, button {
+                        height: 35px;
+                    }
+                    input {
+                        width: 130px;
+                    }
+                }
+                .avatar {
+                    img {
+                        display: none;
+                    }
+                    .blockblog-menu-toggler {
+                        display: block;
+                    }
+                }
+            }
+
+        }
+    }
+}

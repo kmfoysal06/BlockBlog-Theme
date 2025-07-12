@@ -1,7 +1,7 @@
 {
-  "name": "charmfeed",
+  "name": "blockblog-theme",
   "version": "1.0.0",
-  "description": "CharmFeed WordPress Theme",
+  "description": "BlockBlog Theme for WordPress",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode production --progress",
@@ -11,8 +11,8 @@
   "keywords": [
     "wordpress",
     "theme",
-    "resource",
-    "community"
+    "blog",
+    "ajax-loading"
   ],
   "author": "Kazi Mohammad Foysal",
   "license": "GNU",

@@ -1,0 +1,91 @@
+.blockblog-container {
+    max-inline-size: 1080px;
+    margin: 0 auto;
+    margin-block: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    h2 {
+        font-size: 20px;
+        color: rgba(0,0,0,1);
+        margin-bottom: 10px;
+    }
+    &.archive {
+        grid-template-columns: repeat(auto-fill, 300px);
+
+        .blockblog-single {
+    		box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            position: relative;
+            padding: 10px;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+            .post-meta {
+                font-size: 14px;
+                color: rgba(0,0,0,0.6);
+                margin-bottom: 10px;
+            }
+            .post-author-link,
+            .post-category-link {
+                color: rgba(0,0,0,1);
+            }
+            .post-title,
+            .post-excerpt {
+                color: rgba(0,0,0,0.8);
+                text-decoration: none;
+            }
+            &:hover,
+            &:focus-within {
+                background: rgba(0,0,0,0.05);
+                .post-title,
+                .post-excerpt,
+                .post-thumbnail,
+                .post-meta {
+                    filter: blur(1px);
+                    &:hover, 
+                    &:focus-within {
+                        filter: blur(0);
+                    }
+                }
+                .read-more {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+            .read-more {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -60%);
+                font-size: 14px;
+                color: rgba(0,0,0,1);
+                --blockblog-primary-alpha: 100%;
+                --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+                background-color: var(--blockblog-primary);
+                padding: 8px 12px;
+                text-decoration: none;
+                opacity: 0;
+                pointer-events: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+    &.posts-not-found {
+        text-align: center;
+    }
+    &:not(.archive) {
+        .post-thumbnail {
+            width: max(350px, 100%);
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+}

@@ -17,6 +17,12 @@ get_header();
                     <img src="<?php echo get_the_post_thumbnail_url(); ?>" width="200px" height="200px" alt="<?php the_title(); ?>" class="post-thumbnail" loading="lazy" />
                 <?php endif; ?>
                     <h1 class="post-title"><?php the_title(); ?></h1>
+                    <?php
+                        // support breadcrumb for yoast seo
+                        if(function_exists('yoast_breadcrumb')) {
+                            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+                        }
+                    ?>
                     <div class="post-content">
                         <?php the_content(); ?>
                     </div>

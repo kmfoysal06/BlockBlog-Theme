@@ -1,0 +1,8 @@
+@keyframes blockblog-top-progress {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 100px);
+    }
+}

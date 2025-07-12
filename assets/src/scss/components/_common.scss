@@ -1,0 +1,29 @@
+:root {
+    --blockblog-primary-r: 255;
+    --blockblog-primary-g: 143;
+    --blockblog-primary-b: 0;
+    --blockblog-primary-alpha: 100%;
+    --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v23-latin-regular.woff2') format('woff2'),
+       url('../fonts/poppins-v23-latin-regular.ttf') format('truetype'); 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    --blockblog-primary-alpha: 10%;
+    --blockblog-primary: rgb(var(--blockblog-primary-r) var(--blockblog-primary-g) var(--blockblog-primary-b) / var(--blockblog-primary-alpha));
+    background-color: var(--blockblog-primary);
+    font-family: "Poppins";
+  // make the footer always at the bottom
+
+}

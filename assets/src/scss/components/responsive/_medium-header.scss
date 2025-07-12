@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px) {
+    header {
+       .blockblog-header {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+            .logo-and-nav {
+                width: 100%;
+            }
+        }
+    }
+}
