@@ -27,6 +27,7 @@ class Main
     {
         register_nav_menus([
             'blockblog_header_nav' => __('BlockBlog Header Menu', 'blockblog'),
+            'blockblog_footer_nav' => __('BlockBlog Footer Menu', 'blockblog'),
         ]);
         add_theme_support('title-tag');
         add_theme_support('automatic-feed-links');
