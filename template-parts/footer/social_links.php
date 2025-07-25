@@ -6,10 +6,15 @@
 if(!defined("ABSPATH")) {
     exit;
 }
+
 $social_links = blockblog_social_links();
+if(is_array($social_links) && !empty($social_links)):
 ?>
-<div class="footer-socials">
-    <ul>
-        <li> <a href=""><img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yD/r/5D8s-GsHJlJ.png" width="26px" height="26px" loading="lazy" ></a> </li>
-    </ul>
-</div>
+    <div class="footer-socials">
+        <ul>
+            <?php foreach($social_links as $link): ?>
+            <li> <a href="<?php echo esc_url($link['url']); ?>"><span class="<?php echo esc_attr("dashicons " . $link['icon']);  ?>"></span></a> </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

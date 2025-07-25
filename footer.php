@@ -30,7 +30,7 @@ $footer_informations = get_option("blockblog_footer");
                                 'placeholder' => __('Search...', 'blockblog'),
                             ]); ?>                            
                         </div>
-                        <?php get_template_part('template-parts/footer/social_links') ; ?>
+                        <?php get_template_part('template-parts/footer/social_links', '', ['footer_info' => $footer_informations]) ; ?>
                     </div>
                     <div class="footer-section footer-section-menus">
                        <?php if(has_nav_menu('blockblog_footer_nav')): ?>
@@ -38,6 +38,7 @@ $footer_informations = get_option("blockblog_footer");
                                 <h3>External Links:</h3>
                                 <?php wp_nav_menu([
                                     'theme_location' => 'blockblog_footer_nav',
+                                    'link_after' => '<span class="dashicons dashicons-external"></span>'
                                     ]);
                                 ?>
                             </div>

@@ -52,9 +52,9 @@ class Customizer
         $this->add_social_input($customize, "Linkedin", "linkedin");
         $this->add_social_input($customize, "X", "x");
         $this->add_social_input($customize, "Youtube", "yt");
-        $this->add_social_input($customize, "Github", "github");
+//        $this->add_social_input($customize, "Github", "github");
         $this->add_social_input($customize, "WordPress", "wp");
-        $this->add_social_input($customize, "Leetcode", "leetcode");
+//        $this->add_social_input($customize, "Leetcode", "leetcode");
 
     }
     protected function add_social_input($customize, $label, $name) {
