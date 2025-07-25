@@ -17,6 +17,7 @@ class Main
     public function __construct()
     {
         new Assets();
+        new Customizer();
         $this->init_hooks();
     }
     protected function init_hooks() {

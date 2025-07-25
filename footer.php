@@ -5,14 +5,24 @@
 */
 ?>
 
+<?php
+$footer_informations = get_option("blockblog_footer");
+?>
             <footer role="contentinfo" class="blockblog-footer">
                 <div class="blockblog-footer-inner">
                     <div class="footer-section footer-owner-data">
                         <div class="contactinfo">
-                            <h3>Kazi Mohammad Foysal</h3>
-                            <p>Web Developer</p>
-                            <p>Anowara, Chittagong, Bangladesh</p>
-                            <p>info@kmfoysal06.com</p>
+                            <h3><?php bloginfo('name'); ?></h3>
+                            <p><?php bloginfo('description'); ?></p>
+                            <?php if($footer_informations && is_array($footer_informations)): ?>
+                            <?php if(isset($footer_informations['metadata'])): ?>
+                            <p><?php echo esc_html($footer_informations['metadata']); ?></p>
+                            <?php endif; ?>
+
+                            <?php if(isset($footer_informations['metadata_secondary'])): ?>
+                            <p><?php echo esc_html($footer_informations['metadata_secondary']); ?></p>
+                            <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                         <div class="footer-search">
                             <?php get_search_form([
@@ -20,12 +30,7 @@
                                 'placeholder' => __('Search...', 'blockblog'),
                             ]); ?>                            
                         </div>
-                        <div class="footer-socials">
-                            <ul>
-                                <li> <a href=""><img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yD/r/5D8s-GsHJlJ.png" width="26px" height="26px" loading="lazy" ></a> </li>
-                            </ul>
-            
-                        </div>
+                        <?php get_template_part('template-parts/footer/social_links') ; ?>
                     </div>
                     <div class="footer-section footer-section-menus">
                        <?php if(has_nav_menu('blockblog_footer_nav')): ?>
