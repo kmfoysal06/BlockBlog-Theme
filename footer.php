@@ -26,19 +26,19 @@ $footer_informations = get_option("blockblog_footer");
                         </div>
                         <div class="footer-search">
                         <?php
-                                    ob_start();
-                                    get_search_form([
-                                            'aria_label' => __('Footer Search', 'blockblog'),
-                                            'placeholder' => __('Search...', 'blockblog'),
-                                        ]);
-                                    $default_search = ob_get_clean();
+                                    //ob_start();
+                                    //get_search_form([
+                                 //           'aria_label' => __('Footer Search', //'blockblog'),
+                                //            'placeholder' => __('Search...', 'blockblog'),
+                                     //   ]);
+                                    //$default_search = ob_get_clean();
                         ?>
-                        <?php echo apply_filter('blockblog-footer-search', $default_search);?>                            
+                        <?php do_action('blockblog-footer-search'); ?>                            
                         
-                        <?php get_search_form([
-                                'aria_label' => __('Footer Search', 'blockblog'),
-                                'placeholder' => __('Search...', 'blockblog'),
-                            ]); ?>                            
+                        <?php //get_search_form([
+                              //  'aria_label' => __('Footer Search', 'blockblog'),
+                           //     'placeholder' => __('Search...', 'blockblog'),
+                           // ]); ?>                            
                         </div>
                         <?php get_template_part('template-parts/footer/social_links', '', ['footer_info' => $footer_informations]) ; ?>
                     </div>
