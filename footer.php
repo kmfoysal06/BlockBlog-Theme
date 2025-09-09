@@ -25,7 +25,17 @@ $footer_informations = get_option("blockblog_footer");
                             <?php endif; ?>
                         </div>
                         <div class="footer-search">
-                            <?php get_search_form([
+                        <?php
+                                    ob_start();
+                                    get_search_form([
+                                            'aria_label' => __('Footer Search', 'blockblog'),
+                                            'placeholder' => __('Search...', 'blockblog'),
+                                        ]);
+                                    $default_search = ob_get_clean();
+                        ?>
+                        <?php echo apply_filter('blockblog-footer-search', $default_search);?>                            
+                        
+                        <?php get_search_form([
                                 'aria_label' => __('Footer Search', 'blockblog'),
                                 'placeholder' => __('Search...', 'blockblog'),
                             ]); ?>                            
