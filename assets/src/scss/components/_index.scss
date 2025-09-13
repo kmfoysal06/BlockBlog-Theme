@@ -6,6 +6,7 @@
 @forward "./header";;
 @forward "./footer";
 
-@forward "./responsive/_medium-header";
+@forward "./responsive/medium-header";
 @forward "./responsive/small-header";
 @forward "./responsive/small-container";
+@forward "./responsive/medium-container";

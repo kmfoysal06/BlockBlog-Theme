@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1080px) {
+    .blockblog-container {
+
+        --blockblog-container-size: 800px;
+        padding-inline: 20px;
+        
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .blockblog-container {
+
+        --blockblog-container-size: 500px;
+        padding-inline: 20px;
+        
+    }
+}

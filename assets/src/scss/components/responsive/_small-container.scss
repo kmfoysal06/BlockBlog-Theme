@@ -1,5 +1,7 @@
 @media only screen and (max-width: 500px) {
     .blockblog-container {
+
+        --blockblog-container-size: 360px;
         &.archive {
             grid-template-columns: repeat(1, 1fr);
         }
@@ -11,6 +13,9 @@
             .blockblog-single-page {
                 max-width: 390px;
                 white-space: pre-line;
+            }
+            .language {
+              font-size: 12px;
             }
         }
         padding-inline: 20px;

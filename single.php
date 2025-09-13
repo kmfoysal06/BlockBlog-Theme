@@ -27,6 +27,9 @@ get_header();
                     <div class="post-content">
                         <?php the_content(); ?>
                     </div>
+					<div class="post-pagination">
+                        <?php wp_link_pages(); ?>
+					</div>
                     <div class="post-meta">
                         <span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
                         <span class="post-author">by 
