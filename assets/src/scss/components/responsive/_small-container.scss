@@ -2,22 +2,54 @@
     .blockblog-container {
 
         --blockblog-container-size: 360px;
+
         &.archive {
             grid-template-columns: repeat(1, 1fr);
         }
+
         &:not(.archive) {
             h1 {
                 font-size: 1.5rem;
             }
+
             .blockblog-single-post,
             .blockblog-single-page {
                 max-width: 390px;
                 white-space: pre-line;
             }
+
             .language {
-              font-size: 12px;
+                font-size: 12px;
             }
         }
+
         padding-inline: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width: 390px) {
+    .blockblog-container {
+        &:not(.archive) {
+            .blockblog-single-page {
+                max-width: 370px;
+            }
+
+            padding-inline: 10px;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .blockblog-container {
+        &:not(.archive) {
+            .blockblog-single-page {
+                max-width: 340px;
+            }
+
+            padding-inline: 10px;
+        }
     }
 }
