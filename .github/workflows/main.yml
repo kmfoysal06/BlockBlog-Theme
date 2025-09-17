@@ -12,7 +12,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
         server: kmfoysal06.com
-        server-dir: /blog.kmfoysal06.com/wp-content/themes/blockblog
+        server-dir: /blog.kmfoysal06.com/wp-content/themes/blockblog/
         local-dir: ./
         username: kmfoysa1
         password: ${{ secrets.password }}
