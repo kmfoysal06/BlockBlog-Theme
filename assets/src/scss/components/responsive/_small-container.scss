@@ -32,7 +32,8 @@
 @media only screen and (max-width: 390px) {
     .blockblog-container {
         &:not(.archive) {
-            .blockblog-single-page {
+            .blockblog-single-page,
+            .blockblog-single-post {
                 max-width: 370px;
             }
 
@@ -45,7 +46,8 @@
 @media only screen and (max-width: 360px) {
     .blockblog-container {
         &:not(.archive) {
-            .blockblog-single-page {
+            .blockblog-single-page,
+            .blockblog-single-post {
                 max-width: 340px;
             }
 
