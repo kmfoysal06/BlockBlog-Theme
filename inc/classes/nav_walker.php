@@ -64,7 +64,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' x-navigate href="'   . esc_attr( $item->url        ) .'"' : '';
         if ( strpos( $item->url, home_url() ) === 0 ) {
             $attributes .= ' data-blockblog-load="' . esc_url( $item->url ) . '"';
         }

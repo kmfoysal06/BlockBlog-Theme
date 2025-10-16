@@ -8,11 +8,15 @@
 * load common header
 */
 get_header(); 
-
+?>
+<div class="blockblog-fireline-root">
+<?php
 get_template_part("template-parts/posts", "header");
 
 get_template_part("template-parts/posts");
-
+?>
+</div>
+<?php
 /**
 * load common footer
 */
