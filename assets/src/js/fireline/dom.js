@@ -18,7 +18,7 @@ export function replaceHtml(targetEl, html) {
 
     // Get the first element from the created template
 //    const newContent = template.content.firstElementChild;
-    const newContent = template.content;
+    const newContent = template.content.firstElementChild;
 
     // Initializes any Script elements in the template
     const scripts = newContent.querySelectorAll('script');

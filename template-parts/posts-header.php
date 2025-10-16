@@ -8,9 +8,7 @@ if(!defined('ABSPATH')) {
 }
 
 if (is_search()) {
-    $search_query = get_search_query();
-    $html = '<div class="blockblog-container">';
-    $html .= '<h1 class="blockblog-search-title">';
+    $search_query = get_search_query(); $html = '<div class="blockblog-container">'; $html .= '<h1 class="blockblog-search-title">';
     $html .= sprintf(__('Search Results for: %s', 'blockblog'), esc_html($search_query));
     $html .= '</h1>';
     $html .= '</div>';
