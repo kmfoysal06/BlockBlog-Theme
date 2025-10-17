@@ -4085,6 +4085,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
       method: method,
       // Set the request headers
       headers: {
+        "Accept": "text/html",
         "X-Requested-With": "XMLHttpRequest",
         "X-Fireline-Agent": true
       },
