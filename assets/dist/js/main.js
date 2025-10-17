@@ -4085,7 +4085,6 @@ async function ajaxRequest(path, method = 'get', body = null) {
       method: method,
       // Set the request headers
       headers: {
-        "Accept": "application/json",
         "X-Requested-With": "XMLHttpRequest",
         "X-Fireline-Agent": true
       },
@@ -4476,19 +4475,19 @@ __webpack_require__.r(__webpack_exports__);
 
   // Intercept links click and handle navigation
   window.document.body.addEventListener('submit', event => {
+    // we dont want this for form now
+    return;
     // Intercept forms only if the setting is enabled
-    if (window.FireLine.settings.interceptForms === false) return;
+    // removed by dead control flow
+{}
 
     // Get the submitted form
-    const formEl = event.target.closest('form');
+    // removed by dead control flow
+{}
 
     // Check if the form has the native attribute
-    if (formEl && !formEl.hasAttribute('native') && !formEl.hasAttribute('x-submit') && formEl.action.startsWith(window.location.origin)) {
-      event.preventDefault();
-
-      // Submit the form
-      (0,_page__WEBPACK_IMPORTED_MODULE_0__.formSubmission)(formEl);
-    }
+    // removed by dead control flow
+{}
   });
 });
 

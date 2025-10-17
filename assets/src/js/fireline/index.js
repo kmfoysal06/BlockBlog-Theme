@@ -212,6 +212,8 @@ export default (Alpine) => {
 
     // Intercept links click and handle navigation
     window.document.body.addEventListener('submit', (event) => {
+        // we dont want this for form now
+        return;
         // Intercept forms only if the setting is enabled
         if (window.FireLine.settings.interceptForms === false) return;
 
