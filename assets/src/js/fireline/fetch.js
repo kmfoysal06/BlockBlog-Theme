@@ -10,10 +10,9 @@ import { triggerError } from "./helpers";
  * @param {object} [body=null] - The request body.
  * @returns {Promise<object>} The JSON response.
  */
-export async function ajaxRequest(path, method = 'get', body = null) {
+export async function ajaxRequest(path, method = "get", body = null) {
     // If the router is already loading, do nothing
-    if (window.FireLine.context.loading)
-        return;
+    if (window.FireLine.context.loading) return;
 
     // Fire the 'start' event
     document.dispatchEvent(window.FireLine.events.start);
@@ -30,7 +29,11 @@ export async function ajaxRequest(path, method = 'get', body = null) {
             // Set the request method
             method: method,
             // Set the request headers
-            headers: { "Accept": "text/html", "X-Requested-With": "XMLHttpRequest", "X-Fireline-Agent": true },
+            headers: {
+                "Accept": "text/html",
+                "X-Requested-With": "XMLHttpRequest",
+                "Content-Type": "text/html",
+            },
             // Set the request body if provided
             body: body,
             // Abort the request after this.timeout seconds
@@ -39,7 +42,7 @@ export async function ajaxRequest(path, method = 'get', body = null) {
 
         // Throw an error if the fetch failed
         if (!response.ok)
-            throw new Error('Failed to complete the FireLine request.');
+            throw new Error("Failed to complete the FireLine request.");
 
         // Check for redirection
         if (!response.url.endsWith(path)) {
@@ -48,7 +51,7 @@ export async function ajaxRequest(path, method = 'get', body = null) {
             // If the redirected origin matches the current origin
             if (window.location.origin === redirectedUrl.origin) {
                 // Update the browser history with the redirected URL
-                window.history.pushState({}, '', redirectedUrl);
+                window.history.pushState({}, "", redirectedUrl);
 
                 // Set the redirected URL
                 window.FireLine.redirectedUrl = redirectedUrl;
@@ -60,18 +63,18 @@ export async function ajaxRequest(path, method = 'get', body = null) {
 
         // Return the JSON response
         // If the response is invalid JSON, catch the error and log it to the console
-    //    return await response.json()
+        //    return await response.json()
         //
-         //   const { html, title } = response;
+        //   const { html, title } = response;
         const htmlString = await response.text();
         const parser = new DOMParser();
-        const document = parser.parseFromString(htmlString, 'text/html');
+        const document = parser.parseFromString(htmlString, "text/html");
         const title = document.title;
         const html = document.body.innerHTML;
         const head = document.head.innerHTML;
         return { html, title, head };
-           // .catch(error => triggerError(error, 'c1'));
+        // .catch(error => triggerError(error, 'c1'));
     } catch (error) {
-        triggerError(error, 'c2');
+        triggerError(error, "c2");
     }
 }

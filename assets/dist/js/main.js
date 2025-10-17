@@ -4066,7 +4066,7 @@ __webpack_require__.r(__webpack_exports__);
  * @param {object} [body=null] - The request body.
  * @returns {Promise<object>} The JSON response.
  */
-async function ajaxRequest(path, method = 'get', body = null) {
+async function ajaxRequest(path, method = "get", body = null) {
   // If the router is already loading, do nothing
   if (window.FireLine.context.loading) return;
 
@@ -4087,7 +4087,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
       headers: {
         "Accept": "text/html",
         "X-Requested-With": "XMLHttpRequest",
-        "X-Fireline-Agent": true
+        "Content-Type": "text/html"
       },
       // Set the request body if provided
       body: body,
@@ -4096,7 +4096,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
     });
 
     // Throw an error if the fetch failed
-    if (!response.ok) throw new Error('Failed to complete the FireLine request.');
+    if (!response.ok) throw new Error("Failed to complete the FireLine request.");
 
     // Check for redirection
     if (!response.url.endsWith(path)) {
@@ -4105,7 +4105,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
       // If the redirected origin matches the current origin
       if (window.location.origin === redirectedUrl.origin) {
         // Update the browser history with the redirected URL
-        window.history.pushState({}, '', redirectedUrl);
+        window.history.pushState({}, "", redirectedUrl);
 
         // Set the redirected URL
         window.FireLine.redirectedUrl = redirectedUrl;
@@ -4122,7 +4122,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
     //   const { html, title } = response;
     const htmlString = await response.text();
     const parser = new DOMParser();
-    const document = parser.parseFromString(htmlString, 'text/html');
+    const document = parser.parseFromString(htmlString, "text/html");
     const title = document.title;
     const html = document.body.innerHTML;
     const head = document.head.innerHTML;
@@ -4133,7 +4133,7 @@ async function ajaxRequest(path, method = 'get', body = null) {
     };
     // .catch(error => triggerError(error, 'c1'));
   } catch (error) {
-    (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.triggerError)(error, 'c2');
+    (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.triggerError)(error, "c2");
   }
 }
 
