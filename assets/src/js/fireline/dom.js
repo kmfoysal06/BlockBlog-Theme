@@ -19,7 +19,6 @@ export function replaceHtml(targetEl, html) {
     // Get the first element from the created template
 //    const newContent = template.content.firstElementChild;
     const newContent = template;
-    console.log('newcontent', newContent)
 
     // Initializes any Script elements in the template
     const scripts = newContent.querySelectorAll('script');
@@ -85,7 +84,6 @@ export function injectScripts(scripts) {
  */
 export function diffAndPatch(parent, oldNode, newNode) {
 
-        console.log('Node replaced:', oldNode, 'with', newNode);
     // Replace node if type changes or old node is missing
     if (!oldNode || oldNode.nodeName !== newNode.nodeName) {
         // Clean up Alpine.js state if it exists

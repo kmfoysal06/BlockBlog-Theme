@@ -1,5 +1,6 @@
 import { navigateTo, formSubmission } from "./page";
 import { safeReplaceHtml } from "./helpers";
+import NProgress from 'nprogress';
 
 /**
  * FireLine is a plugin for Alpine.js that provides a global reactive object
@@ -229,3 +230,14 @@ export default (Alpine) => {
         }
     });
 }
+window.document.addEventListener('fireStart', () => {
+    NProgress.start();
+});
+window.document.addEventListener('fireEnd', () => {
+    NProgress.done();
+});
+
+
+
+
+

@@ -86,7 +86,6 @@ export function replaceRouterHtml(html) {
 
     // Throw an error if the target element is not found
     if (!targetEl) {
-        console.log(window.FireLine.settings)
         throw new Error('Router target element not found.');
     }
 

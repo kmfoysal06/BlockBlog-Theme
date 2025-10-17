@@ -24,8 +24,6 @@ export function navigateTo(url, pushState = true) {
 
             // Extract HTML and title from the response
             const { html, title, head } = response;
-            console.log("HTML", html)
-            console.log("boyd", title)
 
             // Update the document title if a new title is provided
             if (title) document.title = title;
