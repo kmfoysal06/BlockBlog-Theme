@@ -1,0 +1,1 @@
+1. wp-adminbar not loading issue to be fix

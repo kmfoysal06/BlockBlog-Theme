@@ -68,7 +68,8 @@ export async function ajaxRequest(path, method = 'get', body = null) {
         const document = parser.parseFromString(htmlString, 'text/html');
         const title = document.title;
         const html = document.body.innerHTML;
-        return { html, title };
+        const head = document.head.innerHTML;
+        return { html, title, head };
            // .catch(error => triggerError(error, 'c1'));
     } catch (error) {
         triggerError(error, 'c2');

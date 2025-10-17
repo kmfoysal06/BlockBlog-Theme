@@ -13,12 +13,13 @@
  */
 export function replaceHtml(targetEl, html) {
     // Create a template element from the response html
-    const template = document.createElement('template');
+    const template = document.createElement('body');
     template.innerHTML = html.trim();
 
     // Get the first element from the created template
 //    const newContent = template.content.firstElementChild;
-    const newContent = template.content.firstElementChild;
+    const newContent = template;
+    console.log('newcontent', newContent)
 
     // Initializes any Script elements in the template
     const scripts = newContent.querySelectorAll('script');
@@ -26,8 +27,16 @@ export function replaceHtml(targetEl, html) {
     // Inject the scripts into the DOM
     injectScripts(scripts);
 
+
+    // now diff and patch all styles (external and internal)
+    // TODO: injecting styles should happen perfectly
+
+
+    //Alpine.morph(targetEl, template.querySelector(targetEl.id.toLowerCase()));
     // Replace the current router content with the new content
-    diffAndPatch(targetEl.parentElement, targetEl, newContent);
+   // Alpine.morph(document.body, newContent);
+    const ntarget = document.body;
+    diffAndPatch(ntarget.parentElement, ntarget, newContent);
 }
 
 /**

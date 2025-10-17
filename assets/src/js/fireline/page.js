@@ -1,5 +1,5 @@
 import { ajaxRequest } from "./fetch";
-import { safeReplaceHtml } from "./helpers";
+import { safeReplaceHtml, safeReplaceStyles } from "./helpers";
 
 /**
  * Navigates to the specified URL by fetching the content as JSON and
@@ -23,7 +23,7 @@ export function navigateTo(url, pushState = true) {
             if (!response) return;
 
             // Extract HTML and title from the response
-            const { html, title } = response;
+            const { html, title, head } = response;
             console.log("HTML", html)
             console.log("boyd", title)
 
@@ -32,6 +32,7 @@ export function navigateTo(url, pushState = true) {
 
             // Update the content of the router target element
             safeReplaceHtml(html);
+            safeReplaceStyles(head);
 
             // When the content is updated, wait for the next tick
             Alpine.nextTick(() => {

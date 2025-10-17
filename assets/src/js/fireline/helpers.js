@@ -36,6 +36,33 @@ export function safeReplaceHtml(html) {
         triggerError(error, 'c3');
     }
 }
+export function safeReplaceStyles(head) {
+    try {
+        // Create a temporary element to hold the head content
+        const tempHead = document.createElement('head');
+        tempHead.innerHTML = head.trim();
+
+        // Get all style and link elements from the temporary head
+        const styles = tempHead.querySelectorAll('style, link[rel="stylesheet"]');
+
+        // Replace existing styles in the document head
+        styles.forEach(newStyle => {
+            const existingStyle = document.head.querySelector(
+                newStyle.tagName === 'LINK' 
+                    ? `link[rel="stylesheet"][href="${newStyle.href}"]` 
+                    : 'style'
+            );
+
+            if (existingStyle) {
+                existingStyle.replaceWith(newStyle);
+            } else {
+                document.head.appendChild(newStyle);
+            }
+        });
+    } catch (error) {
+        triggerError(error, 'c4');
+    }
+}
 
 /**
  * Updates the content of the router's target element with the provided HTML.
@@ -64,6 +91,6 @@ export function replaceRouterHtml(html) {
     }
 
     // Replace the targetEl with the provided HTML
-//    replaceHtml(targetEl, html);
-    Alpine.morph(targetEl, html);
+    replaceHtml(targetEl, html);
+    //Alpine.morph(targetEl, html);
 }
